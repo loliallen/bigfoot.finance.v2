@@ -1,6 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  pathPrefix: "test",
   siteMetadata: {},
   plugins: [
     "gatsby-plugin-react-helmet",
