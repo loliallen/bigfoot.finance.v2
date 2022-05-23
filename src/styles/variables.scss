@@ -1,0 +1,38 @@
+$padding-size: 6rem;
+$default_shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+
+$primary_color: #9DC8E4;
+$secondary_color: #A2B6BF;
+
+@mixin side-padding {
+  padding-left: $padding-size;
+  padding-right: $padding-size;
+}
+
+
+
+
+
+@mixin phone {
+  @media (max-width: 599.999px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 600px) and (max-width: 1199.999px) {
+    @content;
+  }
+}
+
+@mixin tablet-portrait {
+  @media (min-width: 600px) and (max-width: 1199.999px) and (orientation:portrait) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}

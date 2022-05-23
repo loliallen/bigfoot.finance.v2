@@ -1,0 +1,106 @@
+@import "variables";
+
+.logo {
+  height: 100%;
+  padding: 0.6rem;
+
+  video {
+    height: 100%;
+  }
+
+  img {
+    height: 100%;
+  }
+}
+
+.header {
+  @include side-padding;
+  background-color: white;
+  z-index: 10;
+  width: 100%;
+  height: 90px;
+
+  .header_content {
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav {
+      @include tablet {
+        display: none;
+      }
+
+      @include phone {
+        display: none;
+      }
+    }
+
+    .nav_menu_btn {
+      display: none;
+
+      @include tablet {
+        display: flex;
+        justify-content: center;
+        align-items: center
+      }
+
+      @include phone {
+        display: flex;
+        justify-content: center;
+        align-items: center
+      }
+    }
+
+    .links {
+      flex: 1;
+      padding-left: 4rem;
+    }
+  }
+
+  @include phone {
+    padding: 0 1rem;
+  }
+}
+
+.games_banner {
+  padding: 2rem;
+
+  .description_text {
+    width: 50%;
+  }
+}
+
+.main_layout {
+  background-color: #ECF4F7;
+}
+
+.layout {
+  min-height: calc(100vh - 64px);
+  margin-bottom: 0;
+  background-color: transparent;
+
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 4px 4px 8px 0px rgba(0, 187, 194, .2);
+}
+
+.card_clickable {
+  transition: all .3s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken(white, 2%);
+    box-shadow: 4px 4px 8px 0px rgba(0, 187, 194, .5);
+  }
+}

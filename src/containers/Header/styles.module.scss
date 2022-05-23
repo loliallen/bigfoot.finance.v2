@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: white;
+    z-index: 2;
+
+    @include tablet {
+        width: 100%;
+    }
+
+    @include phone {
+        width: 100%;
+    }
+}
+
+.menu {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        display: contents;
+    }
+}
+
+.opened {}

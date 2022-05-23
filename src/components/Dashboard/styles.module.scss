@@ -1,0 +1,64 @@
+@import "../../styles/variables.scss";
+
+.container {
+  margin-top: 4rem;
+  display: flex;
+}
+
+.left_side {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  flex: 1;
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include phone {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.large_card {
+  grid-row: span 2 / auto;
+  grid-column: span 2 / auto;
+  @include phone {
+    grid-column: inherit;
+  }
+}
+
+.long_card {
+  grid-column: span 2 / auto;
+  @include phone {
+    grid-column: inherit;
+  }
+}
+
+.button_group {
+  @include phone {
+    flex-direction: column;
+    & button {
+      border-right: none!important;
+      border-left: none!important;
+      border-bottom: 1px solid $primary_color!important;
+    }
+  }
+}
+
+.button_left {
+  border-top-left-radius: 15px!important;
+  border-bottom-left-radius: 15px!important;
+  @include phone {
+    border-top-left-radius: 0px!important;
+    border-bottom-left-radius: 0px!important;    
+  }
+}
+
+.button_right {
+  border-top-right-radius: 15px!important;
+  border-bottom-right-radius: 15px!important;
+  @include phone {
+    border-top-right-radius: 0px!important;
+    border-bottom-right-radius: 0px!important;    
+  }
+}

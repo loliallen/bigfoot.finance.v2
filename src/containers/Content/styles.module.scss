@@ -1,0 +1,441 @@
+  @import '../../styles/variables.scss';
+
+  :root {
+    --index: calc(1vw + 1vh);
+    --gutter: 30px;
+    --side-small: 24;
+    --side-big: 32;
+    --transition: .75s cubic-bezier(.075, .5, 0, 1);
+    --container-height: 7700px;
+
+    @include phone {
+      --side-small: 16;
+      --side-big: 26;
+      --container-height: 7550px;
+
+    }
+
+    @include tablet {
+      --side-small: 18;
+      --side-big: 28;
+      --container-height: 7500px;
+    }
+  }
+
+  .container {
+    position: relative;
+  }
+
+
+  .button {
+    font-size: 2.5rem !important;
+    height: 100% !important;
+    border-radius: 50px !important;
+    padding: 0.25rem 2rem !important;
+    background-color: $secondary_color !important;
+    color: white !important;
+    border: none !important;
+
+    @include phone {
+      font-size: 3rem !important;
+      padding: 0.5rem 2rem !important;
+    }
+
+    @include tablet {
+      font-size: 3rem !important;
+      padding: 0.5rem 2rem !important;
+    }
+  }
+
+  .frame {
+    --center-text-width: 60vw;
+    --text-y-offset: 0px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    h1 {
+      margin: 0;
+      font-size: calc(var(--index)*2.5);
+      color: darken($primary_color, 10%);
+      font-weight: bold;
+      word-spacing: 1.2;
+    }
+
+    h2 {
+      font-size: calc(var(--index)*1.4);
+      color: darken($primary_color, 10%);
+      font-weight: 300;
+      margin-bottom: 5vh;
+    }
+
+    p {
+      color: lighten(#000000, 50%);
+      font-size: calc(var(--index)*0.8);
+
+      @include phone {
+        font-size: calc(var(--index)*.8);
+      }
+    }
+
+    &:nth-child(1) {
+      flex-direction: column;
+
+      .description {
+        max-width: var(--center-text-width);
+      }
+    }
+
+    &:nth-child(2) {
+
+      background-image: url('./images/5.webp');
+      background-size: cover;
+      background-position: center;
+
+      & h1,
+      h2,
+      p {
+        color: white
+      }
+
+      &>div:nth-child(1) {
+        flex: 2;
+      }
+
+      &>div:nth-child(2) {
+        flex: 3;
+        padding: 2rem 5rem;
+        background-color: transparentize($secondary_color, 0.05);
+        border-radius: 25px 0 0 25px;
+      }
+
+    }
+
+    &:nth-child(3) {
+      flex-direction: column;
+
+      .description {
+        max-width: var(--center-text-width);
+      }
+    }
+
+    &:nth-child(4) {
+      flex-direction: column;
+
+      .foreground {
+        padding: 2rem 4rem;
+        background-color: transparentize($secondary_color, 0.05);
+        border-radius: 25px;
+      }
+
+      .background {
+        background-color: lighten($secondary_color, 10%);
+
+        img {
+          width: 40vw;
+        }
+      }
+
+      & h1,
+      h2,
+      p {
+        color: white
+      }
+
+      .description {
+        max-width: var(--center-text-width);
+      }
+    }
+
+    &:nth-child(5) {
+      justify-content: start;
+      padding-left: 10vw;
+
+      .background {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        img {
+          margin-right: 10vw;
+          width: calc(var(--index) * 14);
+          height: calc(var(--index) * 14);
+
+          border-radius: 50%;
+
+        }
+
+        @include tablet {
+          img {
+            margin-right: calc(var(--index) * 3.5);
+          }
+        }
+
+        @include phone {
+          img {
+            margin-right: calc(var(--index) * 1);
+            margin-bottom: calc(var(--index) * 1);
+          }
+
+          align-items: flex-end;
+        }
+
+      }
+
+      p {
+        max-width: 40vw;
+      }
+    }
+
+    &:nth-child(6) {
+      .background {
+        img {
+          width: 100%;
+        }
+      }
+
+
+      .foreground {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        padding: 0 20vw;
+        height: 100vh;
+        background-color: transparentize($secondary_color, 0.05);
+      }
+
+      & h1,
+      h2,
+      p {
+        color: white
+      }
+
+    }
+
+    &:nth-child(7) {
+      padding-top: calc(var(--index)*2);
+
+      .background {
+        width: calc(2/7*100% + 5vw);
+        background-color: lighten($primary_color, 17%);
+
+        .particles {
+          position: absolute;
+          bottom: 150px;
+          right: 120px;
+        }
+      }
+
+
+      .title {
+        z-index: 2;
+        align-self: start;
+        justify-self: center;
+        flex: 2;
+        padding-left: 10vw;
+      }
+
+      h2 {
+        width: min-content;
+      }
+
+      .description {
+        z-index: 2;
+        align-self: start;
+        flex: 5;
+        padding: 0 0 0 calc(var(--index)*5);
+        padding-right: 20vw;
+
+      }
+
+      @include phone {
+        flex-direction: column;
+
+        .description {
+          margin-left: calc(var(--index)*1);
+        }
+      }
+    }
+
+
+    &:nth-child(8) {
+      flex-direction: column;
+
+      .foreground {
+        padding: 2rem 4rem;
+        border-radius: 25px;
+        background-color: transparentize($secondary_color, 0.05);
+      }
+
+      & h1,
+      h2,
+      p {
+        color: white
+      }
+
+      .background {
+        img {
+          width: 100%
+        }
+      }
+
+      .description {
+        max-width: var(--center-text-width);
+      }
+    }
+
+    &:nth-child(9) {
+      justify-content: start;
+      padding-left: 10vw;
+
+      .background {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+
+        img {
+          width: calc(var(--index) * 14);
+          height: calc(var(--index) * 14);
+
+          border-radius: 25px;
+          margin-right: 10vw;
+        }
+
+        @include tablet {
+          img {
+            margin-right: 10vw;
+          }
+        }
+
+        @include phone {
+          align-items: flex-end;
+          margin-right: calc(var(--index) * 1);
+          margin-bottom: calc(var(--index) * 1);
+        }
+      }
+
+      p {
+        max-width: 40vw;
+      }
+    }
+
+    &:nth-child(10) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:last-child {
+      height: calc(100vh - 191px);
+    }
+  }
+
+
+  .foreground {
+    z-index: 1;
+  }
+
+  .background {
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    height: 100%;
+  }
+
+  .text {
+    transform: translateY(var(--text-y-offset));
+
+    & p {
+      max-width: 40vw;
+      margin-top: 3vh;
+
+      @include phone {
+        max-width: 60vw;
+      }
+    }
+  }
+
+  .text_left {
+    transform: translateY(var(--text-y-offset));
+    position: relative;
+    left: 18vw;
+
+    & p {
+      max-width: 30vw;
+      margin-top: 5vh;
+
+      @include phone {
+        max-width: 40vw;
+      }
+    }
+  }
+
+  .text_right {
+    transform: translateY(var(--text-y-offset));
+    position: relative;
+    right: 18vw;
+
+    & p {
+      max-width: 30vw;
+      margin-top: 5vh;
+
+      @include phone {
+        max-width: 40vw;
+      }
+    }
+  }
+
+  .media {
+    transform: translateY(var(--image-y-offset));
+    position: relative;
+    width: calc(var(--index) * var(--side-small));
+    height: calc(var(--index) * var(--side-big));
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+  }
+
+
+  .media_left {
+    right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  }
+
+  .media_right {
+    left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+  }
+
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 240px;
+    height: 240px;
+    z-index: 100;
+  }
+
+  .particles_left {
+    transform: translateY(var(--image-y-offset));
+    position: relative;
+    right: 16vw;
+  }
+
+  .particles_right {
+    transform: translateY(var(--image-y-offset));
+    position: relative;
+    left: 16vw;
+  }

@@ -1,0 +1,43 @@
+
+@mixin centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.colored_span {
+  color: rgba(0, 165, 171, 0.78);
+}
+
+.banner {
+  height: 70vh;
+  margin-top: 3rem;
+  display: flex;
+
+  div {
+    flex: 1;
+  }
+  div:last-child {
+    @include centered;
+  }
+
+  .description_text {
+    color: gray;
+    margin-top: 1.5rem;
+    line-height: 1.2;
+  }
+}
+
+.getting_started {
+  height: 3rem;
+  margin-top: 2rem;
+
+  @include centered;
+  button {
+    font-size: 1.5rem;
+    height: 100%;
+  }
+}
+
+section {
+  margin-bottom: 5rem;
+}

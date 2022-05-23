@@ -1,0 +1,62 @@
+@import "../../styles/variables.scss";
+
+.loader_container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &>div {
+    display: flex;
+  }
+}
+
+.footsteps {
+  display: flex;
+  flex-direction: column;
+  transform: rotate(45deg);
+  margin-right: 1rem;
+}
+
+.footstep {
+  --index: 0;
+  opacity: 0;
+  animation-delay: calc(var(--index)*.3s);
+  animation-name: appearAnimation, outAnimation;
+  animation-duration: calc(18 * .3s);
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards
+}
+
+@keyframes appearAnimation {
+  0% {
+    fill: $primary_color;
+    opacity: 0;
+  }
+
+  75% {
+    fill: $primary_color;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes outAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    fill: black;
+    opacity: .1;
+  }
+}
