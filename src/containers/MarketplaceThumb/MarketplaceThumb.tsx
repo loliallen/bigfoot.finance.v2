@@ -2,10 +2,8 @@ import React from "react";
 import { Button, Typography, Card as AntCard } from "antd";
 import { useLoader } from "../../components/Loader/Loader";
 import { Card } from "../Card";
-import box from "../../images/box.webp";
 import * as styles from "./styles.module.scss";
 export const MarketplaceThumb = () => {
-  const { onLoaded } = useLoader();
   return (
     <>
       <img src="/marketpaclepage_back.jpg" className={styles.img} />
@@ -42,15 +40,16 @@ export const MarketplaceThumb = () => {
               width: 500,
             }}
             cover={
-              <img
-                alt="example"
-                src={box}
+              <video
+                src="/box.mp4"
                 style={{
                   borderRadius: "15px 15px 0 0",
                   width: "100%",
                   height: "100%",
                 }}
-                onLoad={onLoaded}
+                autoPlay
+                muted
+                loop
               />
             }
           >

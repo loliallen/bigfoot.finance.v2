@@ -4,11 +4,10 @@ import { Button, Typography } from "antd";
 import { Link } from "@reach/router";
 import { Particles } from "../../components/Particles/Particles";
 import { useLoader } from "../../components/Loader/Loader";
-import box from "../../images/box.webp";
 
 export const Banner = () => {
   return (
-    <>
+    <div>
       <img className={styles.img} src={"/mainpage_back.jpg"} />
       <div className={styles.banner}>
         <div className={styles.container}>
@@ -35,10 +34,10 @@ export const Banner = () => {
             </div>
           </div>
           <div>
-            <img src={box} alt="box animated" />
+            <video src="/box.mp4" muted autoPlay loop />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
