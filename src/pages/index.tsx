@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Layout } from "antd";
+import Aos from "aos";
 import { Main } from "../containers/Main";
 import { Footer } from "../containers/Footer";
 import { Banner } from "../containers/Banner";
@@ -10,6 +11,9 @@ import ContentData from "../content/content.json";
 import "../styles/pages/home.scss";
 
 const IndexPage = () => {
+  React.useEffect(() => {
+    if (typeof window !== "undefined") Aos.init();
+  }, []);
   return (
     <Layout className="main_layout">
       <SEO title="BigFoot Finance" />
