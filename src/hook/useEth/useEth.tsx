@@ -7,7 +7,7 @@ import React, {
   useState,
 } from "react";
 import Web3 from "web3";
-import Web3Modal from "web3modal";
+import Web3Modal, { local } from "web3modal";
 import { AbiItem } from "web3-utils";
 import { Contract } from "web3-eth-contract";
 import { IS_TESTNET, providerOptions } from "./helpers";
@@ -66,6 +66,9 @@ export const EthProvider = ({
 
   const init = useCallback(() => {
     setState(rest);
+    if (typeof window !== undefined) {
+      if (localStorage.getItem("logged")) connectWallet(Web3.givenProvider);
+    }
   }, [rest]);
 
   const createProvider = () => {
@@ -84,12 +87,13 @@ export const EthProvider = ({
     if (accounts.length > 0) setState({ account: accounts[0] });
   };
 
-  const connectWallet = async () => {
+  const connectWallet = async (givenProvider?: any) => {
     try {
       let newWeb3cli = web3cli;
       let newContracts = contracts;
       let newProvider = provider;
-      if (!provider) newProvider = await createProvider();
+      if (!provider && !givenProvider) newProvider = await createProvider();
+      else newProvider = givenProvider;
       if (!web3cli && newProvider) {
         newWeb3cli = new Web3(newProvider);
       }
@@ -116,6 +120,7 @@ export const EthProvider = ({
       data.provider = newProvider;
       data.contracts = newContracts;
       setState(data);
+      if (typeof window !== undefined) localStorage.setItem("logged", "true");
     } catch (e) {
       console.error(e);
     }
@@ -152,6 +157,7 @@ export const EthProvider = ({
       account: "",
     }));
     setAccounts([]);
+    if (typeof window !== "undefined") localStorage.removeItem("logged");
   };
 
   useEffect(() => {
