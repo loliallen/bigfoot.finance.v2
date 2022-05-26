@@ -8,7 +8,9 @@ const NotFoundPage = () => (
   <Layout>
     <Header />
     <Main>
-      <Typography.Title style={{ textAlign: "center" }}>
+      <Typography.Title
+        style={{ textAlign: "center", marginTop: "30vh", color: "gray" }}
+      >
         Page Not Found
       </Typography.Title>
     </Main>

@@ -55,8 +55,17 @@ exports.onCreateWebpackConfig = ({ actions, stage, plugins }) => {
 exports.onCreatePage = ({ actions }) => {
   const { createRedirect } = actions;
 
-  createRedirect({
-    fromPath: `/dapp/*`,
-    toPath: `/dapp`,
-  });
+  const old_paths = [
+    "/dapp/dashboard",
+    "/dapp/purchase",
+    "/dapp/nodes",
+    "/dapp/staking",
+    "/dapp/rewards",
+  ];
+  old_paths.forEach((e) =>
+    createRedirect({
+      fromPath: `/dapp/dashboard`,
+      toPath: `/dapp`,
+    })
+  );
 };
