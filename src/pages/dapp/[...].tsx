@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Layout, Tabs } from "antd";
-import { Router } from "@reach/router";
+import { Router, useLocation } from "@reach/router";
 import { DappHeader } from "../../containers/Header/DappHeader";
 import { Main } from "../../containers/Main";
 import { Footer } from "../../containers/Footer";
@@ -26,7 +26,11 @@ type TabType =
   | "rewards";
 
 const Dapp = () => {
-  const [tab, setTab] = useState<TabType>("dashboard");
+  const location = useLocation();
+  const [tab, setTab] = useState<TabType>(
+    (location.pathname.replace("dapp", "").replaceAll("/", "") as TabType) ||
+      "dashboard"
+  );
 
   useEffect(() => {
     navigate(`/dapp/${tab}`);

@@ -72,9 +72,7 @@ export const EthProvider = ({
     if (provider) return new Promise((r) => r(provider));
     if (rest.provider) return new Promise((r) => r(rest.provider));
     const web3modal = new Web3Modal({
-      cacheProvider: false,
       providerOptions,
-      disableInjectedProvider: false,
     });
     return web3modal.connect();
   };
