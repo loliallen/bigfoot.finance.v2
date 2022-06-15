@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import { Layout, Tabs } from "antd";
 import { Router, useLocation } from "@reach/router";
+import { navigate } from "gatsby";
 import { DappHeader } from "../../containers/Header/DappHeader";
 import { Main } from "../../containers/Main";
 import { Footer } from "../../containers/Footer";
@@ -15,7 +15,8 @@ import { AlertProvider } from "../../hook/useAlert";
 import { EthProvider } from "../../hook/useEth";
 import CONTRACTS from "../../utils/CONRTACTS";
 import { AppProvider } from "../../hook/useEth/useApp";
-import { navigate } from "gatsby";
+import { ThemeProvider } from "../../components/ThemeSwitcher/ThemeProvider";
+import "../../styles/global.scss";
 
 type TabType =
   | "dashboard"
@@ -36,37 +37,39 @@ const Dapp = () => {
     navigate(`/dapp/${tab}`);
   }, [tab]);
   return (
-    <AlertProvider>
-      <EthProvider contracts={CONTRACTS}>
-        <AppProvider>
-          <Layout>
-            <SEO title="BigFoot Dapp" />
-            <DappHeader />
-            <Main style={{ padding: "2rem 10% 0" }}>
-              <Tabs
-                defaultActiveKey={tab}
-                tabBarStyle={{ color: "gray" }}
-                onChange={(k) => setTab(k as TabType)}
-              >
-                <Tabs.TabPane tab="Dashboard" key="dashboard" />
-                <Tabs.TabPane tab="Purchase Node" key="purchase" />
-                <Tabs.TabPane tab="Nodes" key="nodes" />
-                <Tabs.TabPane tab="Staking" key="staking" />
-                <Tabs.TabPane tab="Rewards history" key="rewards" />
-              </Tabs>
-              <Router basepath="/dapp">
-                <Dashboard path="/dashboard" />
-                <PurchaseNode path="/purchase" />
-                <Nodes path="/nodes" />
-                <Staking path="/staking" />
-                <RewardsHistory path="/rewards" />
-              </Router>
-            </Main>
-            <Footer />
-          </Layout>
-        </AppProvider>
-      </EthProvider>
-    </AlertProvider>
+    <ThemeProvider>
+      <AlertProvider>
+        <EthProvider contracts={CONTRACTS}>
+          <AppProvider>
+            <Layout>
+              <SEO title="BigFoot Dapp" />
+              <DappHeader />
+              <Main style={{ padding: "2rem 10% 0" }}>
+                <Tabs
+                  defaultActiveKey={tab}
+                  tabBarStyle={{ color: "gray" }}
+                  onChange={(k) => setTab(k as TabType)}
+                >
+                  <Tabs.TabPane tab="Dashboard" key="dashboard" />
+                  <Tabs.TabPane tab="Purchase Node" key="purchase" />
+                  <Tabs.TabPane tab="Nodes" key="nodes" />
+                  <Tabs.TabPane tab="Staking" key="staking" />
+                  <Tabs.TabPane tab="Rewards history" key="rewards" />
+                </Tabs>
+                <Router basepath="/dapp">
+                  <Dashboard path="/dashboard" />
+                  <PurchaseNode path="/purchase" />
+                  <Nodes path="/nodes" />
+                  <Staking path="/staking" />
+                  <RewardsHistory path="/rewards" />
+                </Router>
+              </Main>
+              <Footer />
+            </Layout>
+          </AppProvider>
+        </EthProvider>
+      </AlertProvider>
+    </ThemeProvider>
   );
 };
 export default Dapp;

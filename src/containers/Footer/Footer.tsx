@@ -3,13 +3,20 @@ import { Button, Layout, Typography } from "antd";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import * as styles from "./styles.module.scss";
 import { Link } from "@reach/router";
+import { useThemeSwitcher } from "react-css-theme-switcher";
 
 export const Footer = () => {
+  const { currentTheme } = useThemeSwitcher();
   const email = "BigFootFinanceCrypto@gmail.com";
   return (
     <Layout.Footer
       className={styles.footer}
-      style={{ backgroundColor: "hsla(0, 0%, 35%, 1)" }}
+      style={{
+        backgroundColor:
+          currentTheme === "light"
+            ? "hsla(0, 0%, 35%, 1)"
+            : "hsla(0, 0%, 10%, 1)",
+      }}
     >
       <div>
         <Button

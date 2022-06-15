@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -27,14 +27,17 @@ h6 {
   margin: 0;
 }
 
+.ant-card {
+  border-radius: 15px !important;
+}
+
 .ant-btn {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
   box-shadow: none !important;
 
   span {
     text-shadow: none !important;
   }
-
 }
 
 .ant-layout-footer {

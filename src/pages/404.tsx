@@ -3,19 +3,22 @@ import { Layout, Typography } from "antd";
 import { Footer } from "../containers/Footer";
 import { Header } from "../containers/Header";
 import { Main } from "../containers/Main";
+import { ThemeProvider } from "../components/ThemeSwitcher/ThemeProvider";
 
 const NotFoundPage = () => (
-  <Layout>
-    <Header />
-    <Main>
-      <Typography.Title
-        style={{ textAlign: "center", marginTop: "30vh", color: "gray" }}
-      >
-        Page Not Found
-      </Typography.Title>
-    </Main>
-    <Footer />
-  </Layout>
+  <ThemeProvider ignoreStored>
+    <Layout>
+      <Header />
+      <Main>
+        <Typography.Title
+          style={{ textAlign: "center", marginTop: "30vh", color: "gray" }}
+        >
+          Page Not Found
+        </Typography.Title>
+      </Main>
+      <Footer />
+    </Layout>
+  </ThemeProvider>
 );
 
 export default NotFoundPage;

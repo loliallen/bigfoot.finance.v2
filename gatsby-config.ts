@@ -18,10 +18,6 @@ const config: GatsbyConfig = {
         lessOptions: {
           math: "always",
           javascriptEnabled: true,
-          modifyVars: {
-            "@font-size-base": "18px",
-            "@primary-color": "#9DC8E4",
-          },
         },
       },
     },

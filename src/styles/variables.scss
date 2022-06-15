@@ -3,10 +3,12 @@ $default_shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 
 $primary_color: #9DC8E4;
 $secondary_color: #A2B6BF;
+$backgroun_color: #ffffff;
+$layout_bg_color: #ECF4F7;
 
 @mixin side-padding {
-  padding-left: $padding-size;
-  padding-right: $padding-size;
+  padding-left: $padding-size !important;
+  padding-right: $padding-size !important;
 }
 
 

@@ -1,10 +1,10 @@
-import React from "react";
-import { ReactNode, useState } from "react";
+import React, { ReactNode, useState } from "react";
 import { Button, Layout, Typography } from "antd";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link } from "@reach/router";
 import { CSSProperties } from "react";
 import * as styles from "./styles.module.scss";
+import { useThemeSwitcher } from "react-css-theme-switcher";
 
 type Props = {
   showLogo?: boolean;
@@ -21,6 +21,7 @@ export const _Header = ({
   layoutProps = { position: "relative" },
   typographyProps = { color: "black" },
 }: Props) => {
+  const { currentTheme } = useThemeSwitcher();
   const [open, setOpen] = useState(false);
 
   return (
@@ -33,7 +34,7 @@ export const _Header = ({
           <Link to="/" style={{ height: "100%" }}>
             {showLogo && (
               <div className="logo">
-                <img src="/logo.svg" alt="logo" />
+                <img src={"/logo.svg"} alt="logo" />
               </div>
             )}
           </Link>

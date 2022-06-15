@@ -1,11 +1,11 @@
-
 @mixin centered {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .colored_span {
-  color: rgba(0, 165, 171, 0.78);
+  color: hsla(182, 100%, 34%, 0.78);
 }
 
 .banner {
@@ -16,6 +16,7 @@
   div {
     flex: 1;
   }
+
   div:last-child {
     @include centered;
   }
@@ -32,6 +33,7 @@
   margin-top: 2rem;
 
   @include centered;
+
   button {
     font-size: 1.5rem;
     height: 100%;

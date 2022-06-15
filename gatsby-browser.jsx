@@ -1,5 +1,3 @@
-import "./src/styles/theme.less";
-import "./src/styles/global.scss";
 // export const wrapRootElement = ({ element }) => {
 //   return (
 //     <AlertProvider>

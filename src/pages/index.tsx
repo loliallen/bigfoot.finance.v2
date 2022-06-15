@@ -8,22 +8,25 @@ import { Content } from "../containers/Content";
 import { Header } from "../containers/Header";
 import { SEO } from "../components/SEO";
 import ContentData from "../content/content.json";
-import "../styles/pages/home.scss";
+import { ThemeProvider } from "../components/ThemeSwitcher/ThemeProvider";
+import { ThemeStorage } from "../components/SCSSLoader";
 
 const IndexPage = () => {
   React.useEffect(() => {
     if (typeof window !== "undefined") Aos.init();
   }, []);
   return (
-    <Layout className="main_layout">
-      <SEO title="BigFoot Finance" />
-      <Main>
-        <Header position="absolute" color="#B4B4B6" />
-        <Banner />
-        <Content data={ContentData} />
-      </Main>
-      <Footer />
-    </Layout>
+    <ThemeProvider ignoreStored>
+      <Layout className="main_layout">
+        <SEO title="BigFoot Finance" />
+        <Main>
+          <Header position="absolute" color="#B4B4B6" />
+          <Banner />
+          <Content data={ContentData} />
+        </Main>
+        <Footer />
+      </Layout>
+    </ThemeProvider>
   );
 };
 
