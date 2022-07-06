@@ -1,0 +1,64 @@
+.container {
+    min-height: 100vh;
+    padding: 0 10%;
+}
+
+.header {
+    display: flex;
+    padding: 0 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+}
+
+.content {
+    i {
+        font-weight: 500;
+        font-style: italic;
+    }
+}
+
+.banner_container {
+    background-color: lighten(red, 20%);
+}
+
+.banner_header {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    padding: 0 8rem;
+    margin-bottom: 2rem;
+    gap: 2rem;
+
+    div {
+        flex: 1;
+
+        &:nth-child(1) {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+}

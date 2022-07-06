@@ -7,7 +7,7 @@ import { useLoader } from "../../components/Loader/Loader";
 
 export const Banner = () => {
   return (
-    <div>
+    <div style={{ position: "relative" }}>
       <img className={styles.img} src={"/mainpage_back.jpg"} />
       <div className={styles.banner}>
         <div className={styles.container}>

@@ -74,7 +74,7 @@ export const Footer = () => {
       <div style={{ height: "min-content" }}>
         <h4 className={styles.heading}>Social</h4>
         <div className={styles.links}>
-          <a href="https://discord.gg/bigfoot" target="_blank">
+          <a href="https://discord.gg/7wNPpqz7Kj" target="_blank">
             <FaDiscord size={25} color="#d3e6f3" />
           </a>
           <a href="https://twitter.com/BigFootFinance_" target="_blank">
