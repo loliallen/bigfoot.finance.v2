@@ -17,6 +17,7 @@ import CONTRACTS from "../../utils/CONRTACTS";
 import { AppProvider } from "../../hook/useEth/useApp";
 import { ThemeProvider } from "../../components/ThemeSwitcher/ThemeProvider";
 import "../../styles/global.scss";
+import { TrueBanner } from "../../containers/TrueStory/TrueBanner";
 
 type TabType =
   | "dashboard"
@@ -43,6 +44,7 @@ const Dapp = () => {
           <AppProvider>
             <Layout>
               <SEO title="BigFoot Dapp" />
+              <TrueBanner />
               <DappHeader />
               <Main style={{ padding: "2rem 10% 0" }}>
                 <Tabs

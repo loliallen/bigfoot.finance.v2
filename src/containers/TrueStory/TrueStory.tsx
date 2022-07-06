@@ -30,7 +30,7 @@ export const TrueStory = () => {
             fontStyle: "italic",
           }}
         >
-          ATTENTION!!! ShibLord (Neal Bakker) is trying to take over the BigFoot
+          ATTENTION!!! ShibLord (Neal) is trying to take over the BigFoot
           <br />
           project all for himself and kick out GreenYeti and Frey against their
           will!
