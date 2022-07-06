@@ -49,6 +49,7 @@ export const TrueBanner = () => {
                 backgroundColor: "white",
                 color: "#fe2a2a",
                 width: "100%",
+                borderColor: "white",
               }}
             >
               READ MORE
