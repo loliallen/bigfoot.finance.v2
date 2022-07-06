@@ -42,13 +42,6 @@ export const TrueStory = () => {
             <div dangerouslySetInnerHTML={{ __html: s }} />
           </Typography.Paragraph>
         ))}
-        <Typography.Paragraph
-          style={{ fontSize: "24px", lineHeight: "1.1", textAlign: "end" }}
-        >
-          <strong>
-            <i>- GreenYeti</i>
-          </strong>
-        </Typography.Paragraph>
       </div>
       <div className={styles.button_container}>
         <a href="https://discord.gg/7wNPpqz7Kj">
