@@ -19,7 +19,7 @@ const IndexPage = () => {
     <ThemeProvider ignoreStored>
       <Layout className="main_layout">
         <SEO title="BigFoot Finance" />
-        <TrueBanner />
+        {/* <TrueBanner /> */}
         <Main>
           <Header position="absolute" color="#B4B4B6" />
           <Banner />

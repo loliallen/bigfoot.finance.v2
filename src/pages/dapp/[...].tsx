@@ -44,7 +44,7 @@ const Dapp = () => {
           <AppProvider>
             <Layout>
               <SEO title="BigFoot Dapp" />
-              <TrueBanner />
+              {/* <TrueBanner /> */}
               <DappHeader />
               <Main style={{ padding: "2rem 10% 0" }}>
                 <Tabs
